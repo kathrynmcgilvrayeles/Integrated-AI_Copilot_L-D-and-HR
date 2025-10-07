@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Tabs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.1em; /* Increased font size */
+        }
+        .container {
+            max-width: 1100px; /* Increased from 800px */
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-bottom: 2px solid #ddd;
+        }
+        .tab {
+            cursor: pointer;
+            border: none;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+        .tab img {
+            width: 100px;
+            height: 50px;
+            object-fit: contain; /* Changed to contain for better logo visibility */
+            border-radius: 5px;
+            border: 2px solid transparent;
+            transition: border 0.3s;
+            padding: 5px;
+        }
+        .tab.active img {
+            border-color: #0078d4; /* Microsoft Blue */
+        }
+        .tab-content {
+            padding: 20px;
+            text-align: left;
+            border: 2px solid #ddd;
+            border-radius: 0 0 10px 10px;
+            background: white;
+            margin-top: -2px;
+            min-height: 600px; /* Adjusted height */
+        }
+        .tab-content > div {
+            display: none;
+        }
+        .tab-content > div.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Integrated Microsoft Copilot</h1>
+        <ul class="tabs">
+            <li class="tab active" data-tab="tab1">
+                <img src="Outlook.png" alt="Outlook">
+            </li>
+            <li class="tab" data-tab="tab2">
+                <img src="Microsoft Word.png" alt="Microsoft Word">
+            </li>
+            <li class="tab" data-tab="tab3">
+                <img src="Microsoft PowerPoint.png" alt="Microsoft PowerPoint">
+            </li>
+            <li class="tab" data-tab="tab4">
+                <img src="Microsoft Clipchamp.png" alt="Microsoft Clipchamp">
+            </li>
+            <li class="tab" data-tab="tab5">
+                <img src="Microsoft Excel.png" alt="Microsoft Excel">
+            </li>
+            <li class="tab" data-tab="tab6">
+                <img src="Viva Insights.png" alt="Viva Insights">
+            </li>
+        </ul>
+        <div class="tab-content">
+            <div id="tab1" class="active">
+                <h2>Outlook</h2>
+                <p>Copilot appears on the right hand side of the screen so you do not need to leave Outlook to use it, not available at the moment. Below are some examples of how Copilot can assist your Outlook workflow. <br><br>
+                <b>Summarise Email Threads</b> - Copilot can summarise lengthy email threads, saving facilitators time and effort. This is especially useful for staying updated on complex discussions or projects. <br><br>
+                <b>Suggest Responses</b>- It can suggest responses to emails, making it easier for facilitators to communicate effectively. This is helpful for facilitators who are short on time or who need help finding the right words. <br><br>
+                <b>Draft Emails</b> - Copilot can draft emails from scratch, based on a facilitator's instructions. This is useful for creating professional emails quickly and easily. <br><br>
+                <b>Coaching by Copilot</b> - Get feedback on the tone, clarity, and reader sentiment of your drafted emails to communicate more effectively.</p>
+            </div>
+            <div id="tab2">
+                <h2>Microsoft Word</h2>
+                <p>Once again, Copilot can appear alongside the document on the right-hand side. Select the Copilot icon in the ribbon to open the chat pane. <br><br>
+                <b>Draft Content</b> - Generate text with a simple prompt, creating first drafts, outlines, or adding to existing documents. <br><br>
+                <b>Summarise and Chat</b> - Ask Copilot to summarise long documents or ask specific questions about the content to find key information without reading the whole text. <br><br>
+                <b>Rewrite and Edit</b> - Transform text into a table, rewrite sections in a different tone, or get suggestions to improve your writing. <br><br>
+                <b>Lesson Materials</b> - Quickly create lesson plans, quizzes, handouts, and other training materials based on your objectives.</p>
+            </div>
+            <div id="tab3">
+                <h2>Microsoft PowerPoint</h2>
+                <p>Copilot can help you create, organise, and summarise presentations. It appears on the right-hand side of the screen. <br><br>
+                <b>Create a Presentation</b> - Generate a complete presentation from a simple prompt or by referencing a Word document. Copilot will create slides with speaker notes and relevant images. <br><br>
+                <b>Organise Your Slides</b> - Ask Copilot to group slides into sections or re-order them for a more logical flow. <br><br>
+                <b>Summarise Content</b> - Create a summary slide or an agenda based on the content of your presentation. <br><br>
+                <b>Image Generation</b> - Ask Copilot to create custom images to visually enhance your slides.</p>
+            </div>
+            <div id="tab4">
+                <h2>Microsoft Clipchamp</h2>
+                <p>Microsoft Clipchamp is an intuitive video editor that integrates Copilot to simplify video creation. It is accessible through Microsoft 365 and as a standalone application <i>- currently not available to bank staff.</i> <br><br>
+                <b>Auto Compose</b> - Copilot can automatically create a video for you. Simply upload your media, select a style, and Copilot will suggest a sequence with music and transitions. <br><br>
+                <b>Script Generation</b> - If you need a voiceover, Copilot can generate a script for you based on a topic. <br><br>
+                <b>Text-to-Speech</b> - Use AI-powered voiceovers in various languages and styles, eliminating the need to record your own narration. <br><br>
+                <b>Stock Library</b> - Access a rich library of stock video, images, and audio to enhance your projects.</p>
+            </div>
+            <div id="tab5">
+                <h2>Microsoft Excel</h2>
+                <p>Copilot in Excel helps you analyse and explore your data. It can be found in the ribbon on the Home tab. <br><br>
+                <b>Generate Formulas</b> - Ask Copilot to create complex formulas in natural language, so you don't have to remember exact syntax. <br><br>
+                <b>Analyse & Visualise Data</b>- Copilot can identify trends, create charts and PivotTables, and highlight interesting parts of your data automatically. <br><br>
+                <b>Clean Data</b> - Quickly format data, sort and filter, and fix inconsistencies with simple instructions. <br><br>
+                <b>Identify Trends</b> - Highlight struggling learners, weak areas, and correlations between assessments by asking questions about your dataset.</p>
+            </div>
+            <div id="tab6">
+                <h2>Viva Insights</h2>
+                <p>Viva Insights provides personalised, data-driven recommendations to help improve productivity and well-being. Copilot enhances this by allowing you to query your work patterns in natural language. <br><br>
+                <b>Meeting Effectiveness</b> - Ask Copilot to summarise your meeting habits, identify meetings you could decline, and show how much time you spend in overlapping or poorly managed meetings. <br><br>
+                <b>Focus Time Analysis</b> - Use Copilot to analyse how much uninterrupted focus time you have and get suggestions on how to protect more of it in your calendar. <br><br>
+                <b>Network Insights</b> - Understand your collaboration patterns. Ask questions like, "Who are the top people I collaborated with last month?" to see where your time is going. <br><br>
+                <b>Wellbeing Reminders</b> - Copilot can help you set reminders for breaks, schedule focus time, and draft praise for colleagues, fostering a healthier work culture.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+        const tabContents = document.querySelectorAll('.tab-content > div');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetTab = document.getElementById(tab.dataset.tab);
+                tabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(tc => tc.classList.remove('active'));
+                tab.classList.add('active');
+                targetTab.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
